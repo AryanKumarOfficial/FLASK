@@ -5,7 +5,7 @@ Home
 {% block body %}
 <!-- ADD To Do starts -->
 
-<div class="container my-3">
+<div class="container my-3 TODO-first">
     <h1>Add a To Do</h1>
     <form action="/" method="POST">
         <div class="mb-3">
@@ -16,12 +16,12 @@ Home
             <label for="desc" class="form-label">TODO Description</label>
             <input type="text" class="form-control" id="desc" name="desc">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
 <!-- ADD To Do Ends -->
 <!-- Table starts -->
-<div class="container my-3">
+<div class="container my-3 table-main">
     <h1 class="text-center">Your ToDos</h1>
     <div class="row">
 
@@ -44,7 +44,7 @@ Home
         <tbody> -->
 
         {% for todo in allTodo %}
-        <div class="card my-3 mx-3" style="width: 18rem;">
+        <div class="card my-3 mx-3 flask-main-card" id="flask-main-card">
             <div class="card-body">
                 <h5 class="card-title">{{todo.title}} </h5>
                 <p class="card-text">{{todo.desc}} </p>
@@ -73,14 +73,19 @@ Home
             </tr> -->
         {% endfor %}
         {% endif %}
+        {% if allTodo|length == 0 %}
+        &#8203;
+        <!-- No RECORD FOUND -->
+        {% else %}
 
-        <a href="/deleteall">
+        <a href="/deleteall" class="deleteall">
             <div class="d-grid gap-2">
                 <button type="button" class="btn btn-danger btn-sm mx-1">
                     Delete All
                 </button>
             </div>
         </a>
+        {% endif %}
         <!-- </tbody>
     </table> -->
     </div>
@@ -92,7 +97,7 @@ Home
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 
-{% endblock body %}
 </body>
 
 </html>
+{% endblock body %}

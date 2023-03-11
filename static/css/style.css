@@ -1,0 +1,36 @@
+:root,
+:root.light {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --card-bg-color: #fafafa;
+  --input-field-bg: #fafafa;
+}
+:root.dark {
+  --color-bg: rgb(4, 39, 67);
+  --color-fg: #ffffff;
+  --card-bg-color: rgb(19, 70, 110);
+  --input-field-bg: rgb(19, 72, 110);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.card {
+  background-color: var(--card-bg-color) !important;
+}
+
+.TODO-first input {
+  background-color: var(--input-field-bg);
+}
+
+.flask-main-card {
+  width: 18rem;
+}
+.TODO-first,
+.table-main,
+.deleteall {
+  top: 80px;
+  position: relative;
+}
