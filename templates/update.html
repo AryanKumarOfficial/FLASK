@@ -5,7 +5,7 @@ Update
 {% block body %}
 <!-- ADD To Do starts -->
 
-<div class="container my-3">
+<div class="container update-box my-3">
     <h1>Update your TODO</h1>
     <form action="/update/{{todo.SNo}}" method="POST">
         <div class="mb-3">
@@ -18,6 +18,11 @@ Update
             <input type="text" class="form-control" id="desc" name="desc" value="{{todo.desc}}">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/delete/{{todo.SNo}}">
+            <button type="button" class="btn btn-outline-danger btn-sm mx-1">
+                Delete
+            </button>
+        </a>
     </form>
 </div>
 <!-- ADD To Do Ends -->

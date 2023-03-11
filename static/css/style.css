@@ -11,7 +11,9 @@
   --card-bg-color: rgb(19, 70, 110);
   --input-field-bg: rgb(19, 72, 110);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
@@ -30,7 +32,8 @@ body {
 }
 .TODO-first,
 .table-main,
-.deleteall {
+.deleteall,
+.update-box {
   top: 80px;
   position: relative;
 }
